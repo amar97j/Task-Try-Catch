@@ -19,13 +19,15 @@ public class App {
             String password = scanner.nextLine();
 
             // using if condition to authenticate
-            if (authenticationUser(username, password)) {
+            if (authenticationUser(username, password)) // we call authentication method to check
+            {
                 System.out.println("Successfully loged in   ");
             } else {
-                System.out.println("Invalid username or password  ");
+                // System.out.println("Invalid username or password ");
+                throw new Exception("Invalid credintials");
             }
         } catch (Exception e) {
-            System.out.println("ERROR   ");
+            System.out.println("ERROR   " + e.getMessage());
         } finally {
             scanner.close();
         }
